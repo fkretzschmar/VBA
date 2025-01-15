@@ -5,14 +5,19 @@ _____________________________________________________________________
 
 Sub MinhaMacro()
 
-ult_linha = Sheets ("São Paulo").Range("A1000000").End(xlUp).Row
+For Each aba In ThisWorkbook.Sheets
 
-Sheets ("São Paulo").Range("A2:C" & ult_linha).Copy
+    If aba.Name <> "Resumo" Then
 
-pri_linha_resumo = Sheets("Resumo").Range("A1000000").End(xlUp).Row + 1
+        ult_linha = aba.Range("A1000000").End(xlUp).Row
 
-Sheets ("Resumo").Range("A" & pri_linha_resumo).PasteSpecial
+        aba.Range("A2:C" & ult_linha).Copy
 
+        pri_linha_resumo = Sheets("Resumo").Range("A1000000").End(xlUp).Row + 1
+
+        Sheets ("Resumo").Range("A" & pri_linha_resumo).PasteSpecial
+
+    End If
 
 End Sub
 ____________________________________________________________________
@@ -20,9 +25,11 @@ Sub NovaMacro()
 
 For Each aba In ThisWorkbook.Sheets
 
-  msgbox(aba.Name)
+  If aba.Name <> "Resumo" Then
+    msgbox(aba.Name)
+  End If
 
+  
 Next
-
 
 End Sub
