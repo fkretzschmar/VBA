@@ -7,6 +7,22 @@ Sub MinhaMacro()
 
 ult_linha = Sheets ("São Paulo").Range("A1000000").End(xlUp).Row
 
-Sheets ("São Paulo").Range("A2:C").Copy
+Sheets ("São Paulo").Range("A2:C" & ult_linha).Copy
 
-Sheets ("Resumo").Range("A2").PasteSpecial
+pri_linha_resumo = Sheets("Resumo").Range("A1000000").End(xlUp).Row + 1
+
+Sheets ("Resumo").Range("A" & pri_linha_resumo).PasteSpecial
+
+
+End Sub
+____________________________________________________________________
+Sub NovaMacro()
+
+For Each aba In ThisWorkbook.Sheets
+
+  msgbox(aba.Name)
+
+Next
+
+
+End Sub
