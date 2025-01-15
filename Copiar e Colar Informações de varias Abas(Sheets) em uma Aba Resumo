@@ -20,6 +20,9 @@ For Each aba In ThisWorkbook.Sheets
         Sheets ("Resumo").Range("A" & pri_linha_resumo).PasteSpecial
 
     End If
+Next
+
+MSGBOX("Código Finalizado")
 
 APPLICATION.Calculation = x1CalculationAutomatic
 APPLICATION.ScreenUpdating = True
