@@ -1,0 +1,12 @@
+Obs:
+PasteSpecial: Colar
+xlUp: Ctrol + cima
+_____________________________________________________________________
+
+Sub MinhaMacro()
+
+ult_linha = Sheets ("São Paulo").Range("A1000000").End(xlUp).Row
+
+Sheets ("São Paulo").Range("A2:C").Copy
+
+Sheets ("Resumo").Range("A2").PasteSpecial
