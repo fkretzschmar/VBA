@@ -4,6 +4,8 @@ xlUp: Ctrol + cima
 _____________________________________________________________________
 
 Sub MinhaMacro()
+APPLICATION.ScreenUpdating = False
+APPLICATION.Calculation = x1CalculationManual
 
 For Each aba In ThisWorkbook.Sheets
 
@@ -19,6 +21,8 @@ For Each aba In ThisWorkbook.Sheets
 
     End If
 
+APPLICATION.Calculation = x1CalculationAutomatic
+APPLICATION.ScreenUpdating = True
 End Sub
 ____________________________________________________________________
 Sub NovaMacro()
